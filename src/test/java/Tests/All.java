@@ -127,7 +127,7 @@ public class All {
             //s=driver.findElement(By.xpath("//ul[@class='catalog catalog-full js-catalog']//li[1]//span[@class='price']")).getText();
             for (WebElement price : priceList) {
                 System.out.println(price.getText());
-                Assert.assertNotNull(price.getText());// по идее getText() если полу пустое должен выдать Null, можно также разные проверки накладывать уже
+                Assert.assertNotNull(price.getText());// по идее getText() если поле пустое должен выдать Null, можно также разные проверки накладывать уже
             }
             driver.findElement(By.xpath("//div[@class='paging']//a[@class='next btn-blue']")).click();
             i++;
