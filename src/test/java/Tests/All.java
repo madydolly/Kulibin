@@ -1,6 +1,7 @@
 package Tests;
 
 
+
 import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -20,6 +21,7 @@ import java.util.concurrent.TimeUnit;
 
 public class All {
     public ChromeDriver driver;
+
 
 
 
@@ -97,7 +99,7 @@ public class All {
                 }
 
             }
-            if (j<3) { // проверочка дабы цикл прошел 3 раза, а кликов для переходов нам нужно два
+            if (j<2) { // проверочка дабы цикл прошел 3 раза, а кликов для переходов нам нужно два
 
                 driver.findElement(By.xpath("//div[@class='paging']//a[@class='next btn-blue']")).click();
             }
@@ -154,9 +156,12 @@ public class All {
 
         List<WebElement> priceList, oldPriceList, discountList, titleList;
 
+
         do {
             int a = (int) (Math.random() * 40 + 1); // рандомайзер, диапазон просто по количеству страниц в каталоге, пока так...
             driver.navigate().to("https://kulibin.com.ua/catalog/bolgarki/?PAGEN_1=" + a + ""); // тоже так себе решение;)
+
+
 
              priceList = driver.findElementsByXPath("//div[@class='stick-list']//span//ancestor::li//span[@class='price']");// заношу все найденные элементы в списки
              oldPriceList = driver.findElementsByXPath("//div[@class='stick-list']//span//ancestor::li//span[@class='old-price']");
